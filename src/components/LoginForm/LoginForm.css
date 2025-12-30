@@ -1,0 +1,176 @@
+/**
+ * LoginForm Component Styles
+ * Author: Hoang Bao Minh
+ */
+
+.login-form-container {
+  background: var(--color-bg-secondary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.login-form-header {
+  margin-bottom: var(--space-xl);
+}
+
+.login-form-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.login-form .error-message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-accent-ruby);
+  font-size: 0.875rem;
+}
+
+.login-form .error-icon {
+  font-size: 1rem;
+}
+
+.login-success {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--space-lg);
+  background: linear-gradient(135deg, var(--color-accent-emerald), #27ae60);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: white;
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.login-success h3 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent-emerald);
+}
+
+/* Testing Demo */
+.testing-demo-container {
+  background: var(--color-bg-secondary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.testing-demo-header {
+  margin-bottom: var(--space-xl);
+}
+
+.testing-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.form-section {
+  padding: var(--space-xl);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.form-section h4 {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.test-section h4 {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.test-steps {
+  list-style: none;
+}
+
+.test-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  background: var(--color-accent-gold);
+  color: var(--color-bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.step-content h5 {
+  font-size: 0.875rem;
+  margin-bottom: var(--space-xs);
+}
+
+.step-content p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.step-code {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-accent-gold);
+}
+
+@media (max-width: 1024px) {
+  .testing-layout {
+    grid-template-columns: 1fr;
+  }
+}

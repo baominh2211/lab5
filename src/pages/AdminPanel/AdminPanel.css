@@ -1,0 +1,244 @@
+/**
+ * AdminPanel Page Styles
+ * Author: Hoang Bao Minh
+ */
+
+.admin-panel {
+  padding: var(--space-xl);
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+}
+
+.code-splitting-info {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(46, 204, 113, 0.1));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.code-splitting-info .info-icon {
+  font-size: 2.5rem;
+}
+
+.code-splitting-info h4 {
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.code-splitting-info p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: var(--color-bg-secondary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+}
+
+/* Chart Section */
+.chart-section {
+  background: var(--color-bg-secondary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.chart-header h3 {
+  font-size: 1.25rem;
+}
+
+.chart-controls {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-xs);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.chart-btn {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.chart-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.chart-btn.active {
+  background: var(--color-bg-secondary);
+  color: var(--color-accent-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Chart Container */
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 300px;
+  padding: var(--space-lg);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.chart-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+
+.chart-bar {
+  width: 70%;
+  max-width: 40px;
+  background: linear-gradient(180deg, var(--color-accent-gold), #b8942d);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  position: relative;
+  animation: growUp 0.5s ease-out forwards;
+  transform-origin: bottom;
+}
+
+@keyframes growUp {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.bar-value {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.bar-label {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Code Example */
+.admin-panel .code-example {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  border: var(--border-subtle);
+}
+
+.admin-panel .code-example h4 {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-panel .code-example pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.admin-panel .code-example code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .chart-container {
+    overflow-x: auto;
+    padding: var(--space-md);
+  }
+
+  .chart-bar-wrapper {
+    min-width: 50px;
+  }
+}

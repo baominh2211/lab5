@@ -1,0 +1,153 @@
+/**
+ * Tabs Component Styles
+ * Author: Hoang Bao Minh
+ */
+
+.tabs-container {
+  width: 100%;
+}
+
+.tabs-list {
+  display: flex;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.tab-button {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.tab-button:hover:not(.disabled) {
+  color: var(--color-text-primary);
+  background: var(--color-bg-glass);
+}
+
+.tab-button.active {
+  background: var(--color-bg-secondary);
+  color: var(--color-accent-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background: var(--color-accent-gold);
+  border-radius: 1px;
+}
+
+.tab-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-button:focus {
+  outline: none;
+}
+
+.tab-button:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-accent-gold);
+}
+
+.tab-panel {
+  animation: fadeIn var(--transition-normal) ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tabs Demo Container */
+.tabs-demo-container {
+  background: var(--color-bg-secondary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.tabs-demo-header {
+  margin-bottom: var(--space-xl);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: var(--space-lg) 0;
+}
+
+.tab-content {
+  padding: var(--space-lg);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.tab-content h4 {
+  margin-bottom: var(--space-md);
+  color: var(--color-accent-gold);
+}
+
+.tab-content p {
+  line-height: 1.6;
+}
+
+.tab-content ul {
+  list-style: none;
+  margin-top: var(--space-md);
+}
+
+.tab-content li {
+  padding: var(--space-sm) 0;
+  padding-left: var(--space-lg);
+  position: relative;
+  color: var(--color-text-secondary);
+}
+
+.tab-content li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-gold);
+}
+
+@media (max-width: 640px) {
+  .tabs-list {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    text-align: left;
+  }
+
+  .tab-button.active::after {
+    width: 3px;
+    height: 60%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
